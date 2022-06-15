@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Finandroid</string>
+    <string name="saldo_total" />
+    <string name="r_300" />
+    <string name="r_400_00">R$ 400,00</string>
+    <string name="entrada">Entrada</string>
+    <string name="r_65_00">R$ -65,00</string>
+    <string name="sa_das">Saídas</string>
+    <string name="transacoes">Transações</string>
+    <string name="todo">TODO</string>
+    <string name="bananas">bananas</string>
+    <string name="r_12_00">R$ 12,00</string>
 </resources>
