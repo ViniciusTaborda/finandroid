@@ -6,7 +6,6 @@
     android:layout_height="70dp"
     android:layout_gravity="center_vertical"
     android:clickable="true"
-    android:background="@color/white"
     android:layout_margin="10dp"
     android:focusable="true"
     xmlns:tools="http://schemas.android.com/tools"
@@ -16,7 +15,8 @@
         android:id="@+id/linhaUm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints"
+        tools:ignore="ExtraText,MissingConstraints"
+
         >
 
         <ImageView
@@ -24,38 +24,54 @@
             android:layout_width="52dp"
             android:layout_height="match_parent"
             android:src="@drawable/ic_food"
-            app:tint="@color/green" />
+            app:tint="@color/green"
+            android:contentDescription="@string/iconeFood" />
         <TextView
             android:id="@+id/category"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text = "Alimentação"
+            android:text = "@string/alimenta_o"
             android:textSize="20sp"
             android:layout_marginStart="6dp"
             android:layout_weight="1"
+            android:textColor="@color/black"
+            app:drawableRightCompat="@color/white" />
 
-            />
+            <View
+                android:layout_width="3dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center"
+                android:background="@color/white"
+
+                />
+
         <TextView
             android:id="@+id/account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text = "Bradesco"
-
+            android:text = "@string/bradesco"
+            android:textColor="@color/black"
             android:textSize="20sp"
             android:layout_marginStart="6dp"
             android:layout_weight="1"
             />
+        <View
+            android:layout_width="3dp"
+            android:layout_height="15dp"
+            android:layout_gravity="center"
+            android:background="@color/white"
 
+            />
         <TextView
             android:id="@+id/value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text = "R$ 300,00"
-            android:textColor="@android:color/holo_blue_dark"
+            android:text = "@string/r_300_00"
             android:textStyle="bold"
             android:textSize="20sp"
             android:layout_marginStart="6dp"
             android:layout_weight="1"
+            android:textColor="@color/black"
             />
     </LinearLayout>
 
@@ -70,11 +86,27 @@
             android:id="@+id/description"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text = "Pizza de sexta a noite"
+            android:text = "@string/pizza_de_sexta_a_noite"
             android:textSize="20sp"
             android:layout_marginStart="6dp"
             android:layout_weight="1"
+            android:textColor="@color/black"
             />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/divDescricao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toBottomOf="@+id/listaDescricao">
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="4dp"
+            android:background="@color/white"
+
+            />
+
 
     </LinearLayout>
 

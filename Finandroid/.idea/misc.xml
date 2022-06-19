@@ -5,10 +5,11 @@
       <map>
         <entry key="..\:/PUC/Mobile/Finandroid/app/src/main/res/layout/activity_main.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/agath/AndroidStudioProjects/finandroid/Finandroid/app/src/main/res/drawable/backgroun.xml" value="0.1235" />
+        <entry key="..\:/Users/agath/AndroidStudioProjects/finandroid/Finandroid/app/src/main/res/layout/activity_list_transation.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/agath/AndroidStudioProjects/finandroid/Finandroid/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/Users/agath/AndroidStudioProjects/finandroid/Finandroid/app/src/main/res/layout/list_transation.xml" value="0.22" />
+        <entry key="..\:/Users/agath/AndroidStudioProjects/finandroid/Finandroid/app/src/main/res/layout/list_transation.xml" value="0.1" />
         <entry key="..\:/Users/agath/AndroidStudioProjects/finandroid/Finandroid/app/src/main/res/layout/saldos.xml" value="0.1" />
-        <entry key="..\:/Users/agath/AndroidStudioProjects/finandroid/Finandroid/app/src/main/res/layout/transation_layout.xml" value="0.25" />
+        <entry key="..\:/Users/agath/AndroidStudioProjects/finandroid/Finandroid/app/src/main/res/layout/transation_layout.xml" value="0.1" />
       </map>
     </option>
   </component>
