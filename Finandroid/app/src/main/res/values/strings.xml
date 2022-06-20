@@ -14,13 +14,13 @@
     <!-- Home Text Views strings -->
     <string name="banco">Banco</string>
     <string name="valor">Valor</string>
-    <string name="valueTransactionInputHint">R$58.99</string>
-    <string name="bankOptionSpinnerHint">Banco do Brasil</string>
+    <string name="valueTransactionInputText">Valor</string>
+    <string name="bankOptionTransactionText">Banco</string>
+    <string name="bankOptionTransactionHint">Banco do Brasil</string>
     <string name="appNameTitleText">Finandroid 🤖</string>
     <string name="appNameSubtitleText">Suas contas no controle</string>
     <string name="transactionInstructionText">Insira a sua movimentação aqui 💸</string>
     <string name="categoryTransactionText">Categoria</string>
-    <string name="categoryOptionSpinnerHint">Lazer</string>
+    <string name="categoryOptionTransactionHint">Lazer</string>
     <string name="descriptionTransactionText">Descrição</string>
-    <string name="descriptionTransactionHint">Ingressos Dr. Estranho</string>
 </resources>
