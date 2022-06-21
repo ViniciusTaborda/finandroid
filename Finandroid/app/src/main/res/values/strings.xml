@@ -10,6 +10,7 @@
     <string name="todo">TODO</string>
     <string name="bananas">bananas</string>
     <string name="r_12_00">R$ 12,00</string>
+  
     <string name="todo1">TODO</string>
     <string name="todo2">TODO</string>
     <string name="todo3">TODO</string>
@@ -20,4 +21,17 @@
     <string name="r_300_00">R$ 300,00</string>
     <string name="pizza_de_sexta_a_noite">Pizza de sexta a noite</string>
     <string name="imagemBList">TODO</string>
+
+    <!-- Home Text Views strings -->
+    <string name="banco">Banco</string>
+    <string name="valor">Valor</string>
+    <string name="valueTransactionInputText">Valor</string>
+    <string name="bankOptionTransactionText">Banco</string>
+    <string name="bankOptionTransactionHint">Banco do Brasil</string>
+    <string name="appNameTitleText">Finandroid 🤖</string>
+    <string name="appNameSubtitleText">Suas contas no controle</string>
+    <string name="transactionInstructionText">Insira a sua movimentação aqui 💸</string>
+    <string name="categoryTransactionText">Categoria</string>
+    <string name="categoryOptionTransactionHint">Lazer</string>
+    <string name="descriptionTransactionText">Descrição</string>
 </resources>
