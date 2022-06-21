@@ -9,4 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="red">#FF0000</color>
     <color name="green">#008000</color>
+    <color name="DeepSkyBlue">#00BFFF</color>
+    <color name="DodgerBlue">#4db2ea</color>
+    <color name="RoyalBlue">#9c93f0</color>
+    <color name="LightSkyBlue">#a68ef0</color>
 </resources>

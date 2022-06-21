@@ -1,30 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="45dp"
+    android:layout_height="70dp"
     android:layout_gravity="center_vertical"
     android:clickable="true"
-    android:background="?selectableItemBackground"
-    android:focusable="true">
+    android:layout_margin="10dp"
+    android:focusable="true"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
 
-    <TextView
-        android:id="@+id/label"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:id="@+id/linhaUm"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text = "@string/bananas"
-        android:textSize="20sp"
-        android:layout_marginStart="6dp"
-        android:layout_weight="1"
-        />
+        tools:ignore="ExtraText,MissingConstraints"
 
-    <TextView
-        android:id="@+id/amount"
+        >
+
+        <ImageView
+            android:id="@+id/imagemCategoria"
+            android:layout_width="52dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_food"
+            app:tint="@color/green"
+            android:contentDescription="@string/iconeFood" />
+        <TextView
+            android:id="@+id/category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "@string/alimenta_o"
+            android:textSize="20sp"
+            android:layout_marginStart="6dp"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            app:drawableRightCompat="@color/white" />
+
+            <View
+                android:layout_width="3dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center"
+                android:background="@color/white"
+
+                />
+
+        <TextView
+            android:id="@+id/account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "@string/bradesco"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_marginStart="6dp"
+            android:layout_weight="1"
+            />
+        <View
+            android:layout_width="3dp"
+            android:layout_height="15dp"
+            android:layout_gravity="center"
+            android:background="@color/white"
+
+            />
+        <TextView
+            android:id="@+id/value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "@string/r_300_00"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginStart="6dp"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/listaDescricao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/linhaUm"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text = "@string/pizza_de_sexta_a_noite"
+            android:textSize="20sp"
+            android:layout_marginStart="6dp"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/divDescricao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text = "@string/r_12_00"
-        android:textSize="20sp"
-        android:layout_marginStart="12dp"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toBottomOf="@+id/listaDescricao">
 
-        />
-</LinearLayout>
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="4dp"
+            android:background="@color/white"
+
+            />
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

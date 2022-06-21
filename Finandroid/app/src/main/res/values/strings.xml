@@ -10,6 +10,17 @@
     <string name="todo">TODO</string>
     <string name="bananas">bananas</string>
     <string name="r_12_00">R$ 12,00</string>
+  
+    <string name="todo1">TODO</string>
+    <string name="todo2">TODO</string>
+    <string name="todo3">TODO</string>
+    <string name="todo4">TODO</string>
+    <string name="iconeFood">TODO</string>
+    <string name="alimenta_o">Alimentação</string>
+    <string name="bradesco">Bradesco</string>
+    <string name="r_300_00">R$ 300,00</string>
+    <string name="pizza_de_sexta_a_noite">Pizza de sexta a noite</string>
+    <string name="imagemBList">TODO</string>
 
     <!-- Home Text Views strings -->
     <string name="banco">Banco</string>

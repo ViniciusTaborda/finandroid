@@ -4,158 +4,73 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgroun"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hello word"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+    </TextView>
+
+
+
+
     <LinearLayout
-        android:id="@+id/balanceLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:layout_marginTop="20dp"
+        android:id="@+id/layoutBotoes"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="10dp">
 
-
-        tools:ignore="MissingConstraints">
-        <TextView
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/bListaTransacao"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/saldo_total"
-            android:textAllCaps="true"
-            android:textSize="20sp"
-            android:textStyle="bold"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="60dp"
+            android:src="@drawable/ic_list"
+            android:tint="@color/RoyalBlue"
 
-            />
+            android:contentDescription="@string/todo2">
 
-        <TextView
-            android:id="@+id/saldo"
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/badd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/r_300"
-            android:textSize="32sp"
-            android:textStyle="bold"/>
-    </LinearLayout>
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/dashbord"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints,NotSibling"
-        app:layout_constraintTop_toBottomOf="@+id/balanceLayout" >
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="70dp"
-            tools:ignore="MissingConstraints"
-            android:baselineAligned="false"
+            android:layout_marginEnd="60dp"
+            android:src="@drawable/ic_add"
+            android:tint="@color/red"
+            app:backgroundTint="@color/white"
+            android:contentDescription="@string/todo3"
+            app:layout_constraintEnd_toEndOf="@+id/bListaTransacao"
             >
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="12dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_weight="0.5"
-                android:gravity="center"
-                >
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
-                <TextView
-                    android:id="@+id/entradas"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/r_400_00"
-                    android:textStyle="bold"
-                    android:textSize="26sp"
-                    android:textColor="@color/green"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/entrada"
-                    android:textSize="14sp"
-                    android:textAllCaps="true"
-                    />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="12dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_weight="0.5"
-                android:gravity="center"
-                >
-
-                <TextView
-                    android:id="@+id/saidas"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/r_65_00"
-                    android:textStyle="bold"
-                    android:textSize="26sp"
-                    android:textColor="@color/red"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/sa_das"
-                    android:textSize="14sp"
-                    android:textAllCaps="true"
-                    />
-            </LinearLayout>
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
-
-    <LinearLayout
-        android:id="@+id/list"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints"
-        app:layout_constraintTop_toBottomOf="@+id/dashbord"
-        android:layout_marginTop="12dp"
-        android:layout_marginStart="10dp">
-        <TextView
-            app:layout_constraintTop_toTopOf="parent"
-            android:id="@+id/listTransation"
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/bDashbord"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/transacoes"
-            android:textStyle="bold"
-            android:textSize="14sp"
-            android:textAllCaps="true"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
-            />
-    </LinearLayout>
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/ic_dashboard"
+            android:contentDescription="@string/todo4"
+            app:layout_constraintStart_toStartOf="@+id/badd"
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/list"
-        android:layout_marginTop="12dp"
-        tools:ignore="MissingConstraints"
-        android:orientation="vertical">
+            >
+
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
     </LinearLayout>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_margin="10dp"
-        android:src="@drawable/ic_add"
-        android:backgroundTint="@color/red"
-        android:contentDescription="@string/todo" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
