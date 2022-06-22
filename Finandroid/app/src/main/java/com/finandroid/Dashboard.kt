@@ -3,6 +3,7 @@ package com.finandroid
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.finandroid.database.TransactionDbHelper
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.data.BarData
@@ -11,6 +12,8 @@ import com.github.mikephil.charting.data.BarEntry
 
 class Dashboard : AppCompatActivity() {
     private val transactionDbHelper = TransactionDbHelper(this)
+    private val incomesList = transactionDbHelper.readIncomes()
+    private val expensesList = transactionDbHelper.readExpenses()
 
     lateinit var barIncomeArrayList: ArrayList<BarEntry>
     lateinit var barExpenseArrayList: ArrayList<BarEntry>
@@ -18,28 +21,30 @@ class Dashboard : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
-        setIncomeBarData()
-        setExpenseBarData()
+
+        if (this.incomesList.isEmpty() || this.expensesList.isEmpty()){
+            Toast.makeText(this, "Dados insuficientes para visualizar o dashboard. Por favor, insira mais transações.", Toast.LENGTH_SHORT)
+                .show()
+        }
+
+        setIncomeBarData(this.incomesList)
+        setExpenseBarData(this.expensesList)
         setExpensesChart()
         setIncomesChart()
     }
 
-    private fun setIncomeBarData() {
-        val incomes = transactionDbHelper.readIncomes()
-
-        System.out.println(incomes)
-
+    private fun setIncomeBarData(incomesList: MutableList<Double>) {
         barIncomeArrayList = ArrayList<BarEntry>()
-        for (i in 1..10) {
-            barIncomeArrayList.add(BarEntry(i.toFloat(), 10f))
+        for ((i, income_value) in incomesList.withIndex()) {
+            barIncomeArrayList.add(BarEntry(i.toFloat(), income_value.toFloat()))
         }
 
     }
 
-    private fun setExpenseBarData() {
+    private fun setExpenseBarData(expensesList: MutableList<Double>) {
         barExpenseArrayList = ArrayList<BarEntry>()
-        for (i in 1..10) {
-            barExpenseArrayList.add(BarEntry(i.toFloat(), 10f))
+        for ((i, income_value) in expensesList.withIndex()) {
+            barExpenseArrayList.add(BarEntry(i.toFloat(), income_value.toFloat()))
         }
     }
 
