@@ -77,7 +77,7 @@ class TransactionDbHelper(context: Context) :
         with(cursor) {
             while (moveToNext()) {
                 val id = getLong(getColumnIndexOrThrow(BaseColumns._ID))
-                val value = getDouble(getColumnIndexOrThrow(TransactionEntry.COLUMN_NAME_VALUE))
+                val value = getFloat(getColumnIndexOrThrow(TransactionEntry.COLUMN_NAME_VALUE))
                 val bank = getString(getColumnIndexOrThrow(TransactionEntry.COLUMN_NAME_BANK))
                 val category =
                     getString(getColumnIndexOrThrow(TransactionEntry.COLUMN_NAME_CATEGORY))
@@ -94,14 +94,14 @@ class TransactionDbHelper(context: Context) :
         return values
     }
 
-    fun readIncomes(): MutableList<Double> {
+    fun readIncomes(): MutableList<Float> {
         val db = this.readableDatabase
         val cursor = db.rawQuery("SELECT * FROM " + TransactionEntry.TABLE_NAME + " WHERE flow = 0 ORDER BY " + BaseColumns._ID + " ASC", null)
 
-        val values = mutableListOf<Double>();
+        val values = mutableListOf<Float>();
         with(cursor) {
             while (moveToNext()) {
-                val value = getDouble(getColumnIndexOrThrow(TransactionEntry.COLUMN_NAME_VALUE))
+                val value = getFloat(getColumnIndexOrThrow(TransactionEntry.COLUMN_NAME_VALUE))
                 values.add(value)
             }
         }
@@ -110,14 +110,14 @@ class TransactionDbHelper(context: Context) :
         return values
     }
 
-    fun readExpenses(): MutableList<Double> {
+    fun readExpenses(): MutableList<Float> {
         val db = this.readableDatabase
         val cursor = db.rawQuery("SELECT * FROM " + TransactionEntry.TABLE_NAME + " WHERE flow = 1 ORDER BY " + BaseColumns._ID + " ASC", null)
 
-        val values = mutableListOf<Double>();
+        val values = mutableListOf<Float>();
         with(cursor) {
             while (moveToNext()) {
-                val value = getDouble(getColumnIndexOrThrow(TransactionEntry.COLUMN_NAME_VALUE))
+                val value = getFloat(getColumnIndexOrThrow(TransactionEntry.COLUMN_NAME_VALUE))
                 values.add(value)
             }
         }
