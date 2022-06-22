@@ -35,4 +35,7 @@
     <string name="categoryOptionTransactionHint">Lazer</string>
     <string name="descriptionTransactionText">Descrição</string>
     <string name="listTransactionButton">listTransactionButton</string>
+    <string name="transporte">Transporte</string>
+    <string name="banco_do_brasil">Banco do Brasil</string>
+    <string name="r_30000000000">R$ 30000000000</string>
 </resources>
