@@ -136,7 +136,7 @@ class HomeActivity : AppCompatActivity() {
                 Toast.makeText(this, "Por favor, preencha todos os campos", Toast.LENGTH_SHORT)
                     .show()
             } else {
-                val value = valueTransactionInput.text.toString().toDouble()
+                val value = valueTransactionInput.text.toString().toFloat()
                 val bank = bankOptionAutoCompleteTextView.text.toString()
                 val category = categoryOptionsAutoCompleteTextView.text.toString()
                 val description = descriptionTransactionInput.text.toString()
@@ -166,7 +166,7 @@ class HomeActivity : AppCompatActivity() {
                 Toast.makeText(this, "Por favor, preencha todos os campos", Toast.LENGTH_SHORT)
                     .show()
             } else {
-                val value = valueTransactionInput.text.toString().toDouble()
+                val value = valueTransactionInput.text.toString().toFloat()
                 val bank = bankOptionAutoCompleteTextView.text.toString()
                 val category = categoryOptionsAutoCompleteTextView.text.toString()
                 val description = descriptionTransactionInput.text.toString()

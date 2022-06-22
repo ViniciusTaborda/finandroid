@@ -3,6 +3,7 @@ package com.finandroid
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import android.widget.Toast
 import com.finandroid.database.TransactionDbHelper
 import com.github.mikephil.charting.charts.BarChart
@@ -12,38 +13,59 @@ import com.github.mikephil.charting.data.BarEntry
 
 class Dashboard : AppCompatActivity() {
     private val transactionDbHelper = TransactionDbHelper(this)
-    private val incomesList = transactionDbHelper.readIncomes()
-    private val expensesList = transactionDbHelper.readExpenses()
 
-    lateinit var barIncomeArrayList: ArrayList<BarEntry>
-    lateinit var barExpenseArrayList: ArrayList<BarEntry>
+
+    private lateinit var barIncomeArrayList: ArrayList<BarEntry>
+    private lateinit var barExpenseArrayList: ArrayList<BarEntry>
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
 
-        if (this.incomesList.isEmpty() || this.expensesList.isEmpty()){
-            Toast.makeText(this, "Dados insuficientes para visualizar o dashboard. Por favor, insira mais transações.", Toast.LENGTH_SHORT)
+
+        val incomesList = transactionDbHelper.readIncomes()
+        val expensesList = transactionDbHelper.readExpenses()
+
+        val incomesSum = incomesList.sum()
+        val expensesSum = expensesList.sum()
+        val balance = incomesSum - expensesSum
+
+        val incomesSumText = findViewById<TextView>(R.id.totalIncomes)
+        val expensesSumText = findViewById<TextView>(R.id.totalExpenses)
+        val balanceText = findViewById<TextView>(R.id.balance)
+
+    expensesSumText.text = "R$ $expensesSum"
+    incomesSumText.text = "R$ $incomesSum"
+    balanceText.text = "R$ $balance"
+
+    setIncomeBarData(incomesList)
+    setExpenseBarData(expensesList)
+    setExpensesChart()
+    setIncomesChart()
+}
+
+    private fun setIncomeBarData(transactionsList: MutableList<Float>) {
+
+        if (transactionsList.isEmpty()){
+            Toast.makeText(this, "Dados insuficientes por favor insira mais entradas.", Toast.LENGTH_SHORT)
                 .show()
         }
 
-        setIncomeBarData(this.incomesList)
-        setExpenseBarData(this.expensesList)
-        setExpensesChart()
-        setIncomesChart()
-    }
-
-    private fun setIncomeBarData(incomesList: MutableList<Double>) {
         barIncomeArrayList = ArrayList<BarEntry>()
-        for ((i, income_value) in incomesList.withIndex()) {
+        for ((i, income_value) in transactionsList.withIndex()) {
             barIncomeArrayList.add(BarEntry(i.toFloat(), income_value.toFloat()))
         }
 
     }
 
-    private fun setExpenseBarData(expensesList: MutableList<Double>) {
+    private fun setExpenseBarData(transactionsList: MutableList<Float>) {
+        if (transactionsList.isEmpty()){
+            Toast.makeText(this, "Dados insuficientes por favor insira mais saídas.", Toast.LENGTH_SHORT)
+                .show()
+        }
         barExpenseArrayList = ArrayList<BarEntry>()
-        for ((i, income_value) in expensesList.withIndex()) {
+        for ((i, income_value) in transactionsList.withIndex()) {
             barExpenseArrayList.add(BarEntry(i.toFloat(), income_value.toFloat()))
         }
     }

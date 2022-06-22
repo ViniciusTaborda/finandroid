@@ -90,6 +90,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:maxLength="101"
+            android:inputType="text"
             android:textColorHint="#757575"
             tools:ignore="TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -218,6 +219,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/includeTransactionButton"
         app:layout_constraintTop_toBottomOf="@+id/descriptionTransactionLayout"
-        app:srcCompat="@drawable/ic_baseline_bar_chart" />
+        app:srcCompat="@drawable/ic_baseline_bar_chart"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
