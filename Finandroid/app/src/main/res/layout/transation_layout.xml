@@ -21,21 +21,23 @@
 
         <ImageView
             android:id="@+id/imagemCategoria"
-            android:layout_width="52dp"
-            android:layout_height="match_parent"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:src="@drawable/ic_food"
             app:tint="@color/green"
             android:contentDescription="@string/iconeFood" />
         <TextView
             android:id="@+id/category"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:text = "@string/alimenta_o"
-            android:textSize="20sp"
+            android:text = "@string/transporte"
+            android:textSize="16sp"
             android:layout_marginStart="6dp"
             android:layout_weight="1"
             android:textColor="@color/black"
-            app:drawableRightCompat="@color/white" />
+            app:drawableRightCompat="@color/white"
+            android:gravity="left"
+            tools:ignore="RtlHardcoded" />
 
             <View
                 android:layout_width="3dp"
@@ -47,13 +49,14 @@
 
         <TextView
             android:id="@+id/account"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text = "@string/bradesco"
+            android:text = "@string/banco_do_brasil"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:layout_marginStart="6dp"
             android:layout_weight="1"
+            android:gravity="center"
             />
         <View
             android:layout_width="3dp"
@@ -64,15 +67,16 @@
             />
         <TextView
             android:id="@+id/value"
-            android:layout_width="wrap_content"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
-            android:text = "@string/r_300_00"
+            android:text = "@string/r_30000000000"
             android:textStyle="bold"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:layout_marginStart="6dp"
             android:layout_weight="1"
             android:textColor="@color/black"
-            />
+            android:gravity="right"
+            tools:ignore="RtlHardcoded" />
     </LinearLayout>
 
     <LinearLayout
@@ -80,17 +84,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/linhaUm"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+        android:gravity="center">
 
         <TextView
             android:id="@+id/description"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text = "@string/pizza_de_sexta_a_noite"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:layout_marginStart="6dp"
             android:layout_weight="1"
             android:textColor="@color/black"
+            android:gravity="center"
             />
     </LinearLayout>
     <LinearLayout
