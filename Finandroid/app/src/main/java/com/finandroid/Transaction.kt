@@ -1,7 +1,6 @@
 package com.finandroid
 
 data class Transaction (
-
     val category:String,
     val value: String,
     val account: String,

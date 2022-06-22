@@ -159,7 +159,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/descriptionTransactionLayout"
         app:srcCompat="@drawable/ic_add"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/expenseTransactionButton"
@@ -167,10 +167,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="115dp"
+        android:backgroundTint="@color/red"
         android:clickable="true"
         android:focusable="true"
         android:visibility="invisible"
-        android:backgroundTint="@color/red"
         app:layout_constraintBottom_toTopOf="@+id/includeTransactionButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/descriptionTransactionLayout"
@@ -183,14 +183,41 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="115dp"
         android:layout_marginTop="10dp"
+        android:backgroundTint="@color/green"
         android:clickable="true"
         android:focusable="true"
         android:visibility="invisible"
-        android:backgroundTint="@color/green"
         app:layout_constraintBottom_toTopOf="@+id/includeTransactionButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/descriptionTransactionLayout"
         app:srcCompat="@drawable/ic_trending_up"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/listTransactionsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:layout_marginBottom="10dp"
+        android:clickable="true"
+        android:contentDescription="@string/listTransactionButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/includeTransactionButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionTransactionLayout"
+        app:srcCompat="@drawable/ic_list" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/dashboardButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:layout_marginBottom="10dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/includeTransactionButton"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionTransactionLayout"
+        app:srcCompat="@drawable/ic_baseline_bar_chart" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

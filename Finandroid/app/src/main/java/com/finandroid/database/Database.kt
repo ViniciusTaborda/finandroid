@@ -61,10 +61,10 @@ class TransactionDbHelper(context: Context) :
             put(TransactionEntry.COLUMN_NAME_BANK, transaction.bank)
             put(TransactionEntry.COLUMN_NAME_CATEGORY, transaction.category)
             put(TransactionEntry.COLUMN_NAME_DESCRIPTION, transaction.description)
+            put(TransactionEntry.COLUMN_NAME_FLOW, transaction.flow)
         }
 
         // Insert the new row, returning the primary key value of the new row
-
         return db?.insert(TransactionEntry.TABLE_NAME, null, values);
     }
 
@@ -79,8 +79,10 @@ class TransactionDbHelper(context: Context) :
                 val id = getLong(getColumnIndexOrThrow(BaseColumns._ID))
                 val value = getDouble(getColumnIndexOrThrow(TransactionEntry.COLUMN_NAME_VALUE))
                 val bank = getString(getColumnIndexOrThrow(TransactionEntry.COLUMN_NAME_BANK))
-                val category = getString(getColumnIndexOrThrow(TransactionEntry.COLUMN_NAME_CATEGORY))
-                val description = getString(getColumnIndexOrThrow(TransactionEntry.COLUMN_NAME_DESCRIPTION))
+                val category =
+                    getString(getColumnIndexOrThrow(TransactionEntry.COLUMN_NAME_CATEGORY))
+                val description =
+                    getString(getColumnIndexOrThrow(TransactionEntry.COLUMN_NAME_DESCRIPTION))
                 val flow = getInt(getColumnIndexOrThrow(TransactionEntry.COLUMN_NAME_FLOW))
 
                 val transaction = TransactionResponse(id, value, bank, category, description, flow)

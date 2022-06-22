@@ -10,7 +10,7 @@
     <string name="todo">TODO</string>
     <string name="bananas">bananas</string>
     <string name="r_12_00">R$ 12,00</string>
-  
+
     <string name="todo1">TODO</string>
     <string name="todo2">TODO</string>
     <string name="todo3">TODO</string>
@@ -34,4 +34,5 @@
     <string name="categoryTransactionText">Categoria</string>
     <string name="categoryOptionTransactionHint">Lazer</string>
     <string name="descriptionTransactionText">Descrição</string>
+    <string name="listTransactionButton">listTransactionButton</string>
 </resources>

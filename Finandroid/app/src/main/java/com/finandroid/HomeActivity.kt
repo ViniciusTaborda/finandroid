@@ -1,6 +1,7 @@
 package com.finandroid
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
@@ -89,6 +90,20 @@ class HomeActivity : AppCompatActivity() {
             findViewById<FloatingActionButton>(R.id.incomeTransactionButton)
         val expenseTransactionButton =
             findViewById<FloatingActionButton>(R.id.expenseTransactionButton)
+        val transactionListButton =
+            findViewById<FloatingActionButton>(R.id.listTransactionsButton)
+        val dashboardButton =
+            findViewById<FloatingActionButton>(R.id.dashboardButton)
+
+        transactionListButton.setOnClickListener {
+            val transactionIntent = Intent(this, ListTransaction::class.java)
+            startActivity(transactionIntent)
+        }
+
+        dashboardButton.setOnClickListener {
+            val dashboardIntent = Intent(this, Dashboard::class.java)
+            startActivity(dashboardIntent)
+        }
 
         fun isFieldsFilled(): Boolean {
             val value = valueTransactionInput.text.toString()
