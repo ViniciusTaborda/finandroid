@@ -93,4 +93,36 @@ class TransactionDbHelper(context: Context) :
 
         return values
     }
+
+    fun readIncomes(): MutableList<Double> {
+        val db = this.readableDatabase
+        val cursor = db.rawQuery("SELECT * FROM " + TransactionEntry.TABLE_NAME + " WHERE flow = 0 ORDER BY " + BaseColumns._ID + " ASC", null)
+
+        val values = mutableListOf<Double>();
+        with(cursor) {
+            while (moveToNext()) {
+                val value = getDouble(getColumnIndexOrThrow(TransactionEntry.COLUMN_NAME_VALUE))
+                values.add(value)
+            }
+        }
+        cursor.close()
+
+        return values
+    }
+
+    fun readExpenses(): MutableList<Double> {
+        val db = this.readableDatabase
+        val cursor = db.rawQuery("SELECT * FROM " + TransactionEntry.TABLE_NAME + " WHERE flow = 1 ORDER BY " + BaseColumns._ID + " ASC", null)
+
+        val values = mutableListOf<Double>();
+        with(cursor) {
+            while (moveToNext()) {
+                val value = getDouble(getColumnIndexOrThrow(TransactionEntry.COLUMN_NAME_VALUE))
+                values.add(value)
+            }
+        }
+        cursor.close()
+
+        return values
+    }
 }

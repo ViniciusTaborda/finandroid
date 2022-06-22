@@ -3,17 +3,17 @@ package com.finandroid
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.finandroid.database.TransactionDbHelper
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
-import com.github.mikephil.charting.utils.ColorTemplate
 
 class Dashboard : AppCompatActivity() {
+    private val transactionDbHelper = TransactionDbHelper(this)
 
     lateinit var barIncomeArrayList: ArrayList<BarEntry>
     lateinit var barExpenseArrayList: ArrayList<BarEntry>
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,22 +24,26 @@ class Dashboard : AppCompatActivity() {
         setIncomesChart()
     }
 
-    private fun setIncomeBarData(){
+    private fun setIncomeBarData() {
+        val incomes = transactionDbHelper.readIncomes()
+
+        System.out.println(incomes)
+
         barIncomeArrayList = ArrayList<BarEntry>()
-        for (i in 1..10){
+        for (i in 1..10) {
             barIncomeArrayList.add(BarEntry(i.toFloat(), 10f))
         }
 
     }
 
-    private fun setExpenseBarData(){
+    private fun setExpenseBarData() {
         barExpenseArrayList = ArrayList<BarEntry>()
-        for (i in 1..10){
+        for (i in 1..10) {
             barExpenseArrayList.add(BarEntry(i.toFloat(), 10f))
         }
     }
 
-    private fun setIncomesChart(){
+    private fun setIncomesChart() {
         var barChartIncomes: BarChart = findViewById(R.id.barchart_incomes)
         var barDataSetObj = BarDataSet(barIncomeArrayList, "Incomes chart")
         var barDataObj = BarData(barDataSetObj)
@@ -60,7 +64,8 @@ class Dashboard : AppCompatActivity() {
         barChartIncomes.axisRight.isEnabled = false
 
     }
-    private fun setExpensesChart(){
+
+    private fun setExpensesChart() {
         var barChartExpenses: BarChart = findViewById(R.id.barchart_expenses)
         var barDataSetObj = BarDataSet(barExpenseArrayList, "Expenses chart")
         var barDataObj = BarData(barDataSetObj)
