@@ -36,7 +36,8 @@ class TransactionAdapter(
         holder.category.text = itens[position].category
         holder.description.text = itens[position].description
         holder.account.text = itens[position].bank
-        holder.value.text = itens[position].value.toString()
+        val valueTransaction = itens[position].value.toString()
+        holder.value.text = "R$ $valueTransaction"
 
         if (itens[position].flow == 0) {
             holder.imagem.setImageResource(R.drawable.ic_trending_up)
